@@ -1,246 +1,483 @@
-/*********** Change Box Model ***********/
-:root {
-  
-  --primary-color: #003399;       
-  --secondary-color: #0072CE;     
-  --text-color: #ffffff;          
-  --background-color: #f0f4f8;    
-  --link-color: #cce4ff;           
-  --link-hover-color: #a0c8ff;    
-  --nav-bg-color: var(--primary-color);
+/* public/css/styles.css */
 
-  /* Font Sizes */
-  --header-font-size: clamp(2rem, 5vw, 3rem);
-  --heading-font-size: clamp(1.5rem, 4vw, 2.5rem);
-  --button-font-size: clamp(1rem, 3vw, 1.5rem);
-  --paragraph-font-size: clamp(1rem, 2vw, 1.2rem);
-
-  /* Font Weights */
-  --header-font-weight: 700;
-  --heading-font-weight: 600;
-  --button-font-weight: 500;
-  --paragraph-font-weight: 400;
-}
-
-/* Box Sizing Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* Estilos generales */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*********** BASE BODY STYLES ***********/
 body {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-optical-sizing: auto;
-  color: #222; 
-  background-color: var(--background-color);
+  background-color: #f5f7fa;
+  color: #333;
   line-height: 1.6;
-  min-height: 100vh;
 }
 
-/*********** HEADER ***********/
-header {
-  background-color: var(--primary-color); /* #003399 */
-  color: var(--text-color); 
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* ... (el resto de tu CSS igualito) ... */
+
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 95%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      padding: 25px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .logo-container {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+    }
+    
+    .name {
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Secciones generales */
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: #4e54c8;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #8f94fb;
+    }
+    
+    h3 {
+      font-size: 1.7rem;
+      color: #4e54c8;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h3:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      border-radius: 2px;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    ul {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    
+    /* Sección de ofertas */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .feature-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 5px solid #4e54c8;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #4e54c8;
+    }
+    
+    .feature-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #4e54c8;
+    }
+    
+    /* Lista de recursos por grado */
+    .resources-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    
+    .grade-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 5px solid #4e54c8;
+    }
+    
+    .grade-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .grade-header {
+      padding: 20px;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .resources-list {
+      padding: 20px;
+    }
+    
+    .resource-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      transition: background-color 0.2s;
+    }
+    
+    .resource-item:hover {
+      background-color: #e9ecef;
+    }
+    
+    .resource-icon {
+      margin-right: 15px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .math .resource-icon {
+      background-color: #FF9A8B;
+    }
+    
+    .science .resource-icon {
+      background-color: #6A11CB;
+    }
+    
+    .videos .resource-icon {
+      background-color: #2575FC;
+    }
+    
+    .exercises .resource-icon {
+      background-color: #49a09d;
+    }
+    
+    .resource-text h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: #444;
+    }
+    
+    .resource-text p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    
+    .resource-link {
+      display: inline-block;
+      padding: 5px 12px;
+      background-color: #4e54c8;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      transition: background-color 0.2s;
+    }
+    
+    .resource-link:hover {
+      background-color: #3a3fb8;
+    }
+    
+    /* Sección para docentes */
+    .teachers-section {
+      background: linear-gradient(135deg, #f5f7fa, #e9ecef);
+      border-left: 5px solid #49a09d;
+    }
+    
+    .teachers-section h3 {
+      color: #49a09d;
+    }
+    
+    .teachers-section h3:after {
+      background: linear-gradient(to right, #49a09d, #5fbfbc);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2c3e50, #4a6580);
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    footer p {
+      margin: 0;
+      opacity: 0.9;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .resources-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .name {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.7rem;
+      }
+      
+      h3 {
+        font-size: 1.4rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Header y navegación */
+#main-header {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4vw;
+  justify-content: space-between;
 }
-
 
 .site-name a {
-  color: var(--text-color);
-  font-weight: var(--header-font-weight);
-  font-size: var(--header-font-size);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
   text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.site-name a:hover,
-.site-name a:focus {
-  color: var(--link-hover-color);
-  outline: none;
+.main-nav a:hover {
+  color: #ffd700;
 }
 
-.user-tools a {
-  color: var(--text-color);
-  font-weight: var(--heading-font-weight);
-  font-size: var(--heading-font-size);
+.user-tools .btn-account {
+  background: white;
+  color: #4e54c8;
+  padding: 8px 15px;
+  border-radius: 20px;
   text-decoration: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.user-tools a:hover,
-.user-tools a:focus {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  outline: none;
-  cursor: pointer;
-}
-
-/*********** LINKS ***********/
-a {
-  text-decoration: none;
-  color: var(--link-color);
-  transition: color 0.3s ease-in-out;
-  font-weight: 600;
-}
-
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  outline: none;
-}
-
-/*********** NAVIGATION ***********/
-nav {
-  background-color: var(--nav-bg-color);
-  padding: 1rem 2vw;
-  box-shadow: inset 0 -2px 5px rgba(0,0,0,0.15);
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  font-size: var(--heading-font-size);
-  font-weight: var(--heading-font-weight);
-}
-
-nav ul li a {
-  color: var(--text-color);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  outline: none;
-}
-
-/*********** SECTIONS ***********/
-section.hero {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-section.hero img {
-  max-width: 100%; 
-  width: 300px;    
-  height: auto;    
-  display: block;  
-  margin: 0 auto;  
-}
-
-
-section.hero h1 {
-  font-size: var(--header-font-size);
-  font-weight: var(--header-font-weight);
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-section.hero p {
-  font-size: var(--paragraph-font-size);
-  font-weight: var(--paragraph-font-weight);
+.user-tools .btn-account:hover {
+  background: #ddd;
   color: #333;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-/*********** DELOREAN SECTION CONTAINER ***********/
-.delorean-sections {
+/* ======== NAVIGATION STYLES ======== */
+nav[role="navigation"] {
+  background: linear-gradient(135deg, rgba(78, 84, 200, 0.9), rgba(143, 148, 251, 0.9));
+  padding: 15px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.main-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-}
-
-/*********** UPGRADES SECTION ***********/
-.upgrades-section {
-  flex: 1 1 45%;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-.upgrades-section h2 {
-  font-size: var(--heading-font-size);
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
-}
-
-.upgrades-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.upgrade-item {
-  width: 100px;
-  text-align: center;
-}
-
-.upgrade-item img {
-  width: 100%;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.upgrade-item a {
-  display: block;
-  margin-top: 0.5rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-
-/*********** REVIEWS SECTION ***********/
-.reviews-section {
-  flex: 1 1 45%;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  text-align: left;
-}
-
-.reviews-section h2 {
-  font-size: var(--heading-font-size);
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-.reviews-list {
+  gap: 30px;
   list-style: none;
-  padding-left: 1rem;
 }
 
-.reviews-list li {
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--primary-color);
-  font-style: italic;
+.main-nav li {
+  position: relative;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+  display: inline-block;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background: #ffd700;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #ffd700;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* antes 30px, ahora mucho más compacto */
+  }
+
+  .main-nav li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav a {
+    display: block;
+    font-size: 1rem; /* reduce el tamaño del texto en móvil */
+    padding: 8px 0;  /* menos alto para que no se vean tan grandes */
+  }
+}
+
+
+/* ===== LOGO FULL-WIDTH ===== */
+.logo-container {
+  width: 100%;
+  height: 100vh; /* altura de toda la ventana */
+  overflow: hidden;
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajusta la altura en pantallas más grandes */
+@media (min-width: 1024px) {
+  .logo-container {
+    height: 400px;
+  }
+}
+
+/* Ajusta la altura en móviles para que no ocupe demasiado */
+@media (max-width: 768px) {
+  .logo-container {
+    height: 200px;
+  }
 }

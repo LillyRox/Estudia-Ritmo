@@ -26,6 +26,10 @@ app.get("/", function(req,res){
 
 })
 
+app.get("/por-grado", (req, res) => {
+  res.render("por-grado", { title: "Por Grado" })
+})
+
 /* ***********************
  * Local Server Information
  * Values from .env (environment) file
